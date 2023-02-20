@@ -66,14 +66,18 @@ noStroke();
 fill(24, 69, 79);
 triangle(x-120, y-10, x-80, y-80, x-30, y-10);
 fill(194, 242, 252);
-triangle(x-80, y-15, x-80, y-70, x-40, y-15);
+triangle(x-85, y-12, x-79, y-75, x-35, y-12);
 quad(0, y-20, x-90, y-50, x-100, y-45, 0, y);
+
+//the color red of the rainbow
 fill(255, 0, 0);
 quad(x-65, y-35, x+50, y+50, x+70, y+150, x-65, y-35);
 quad(x+70, y+150, x+220, y+15, x+240, y-70, x+50, y+50);
 quad(x+220, y+15, x+370, y+270, x+440, y+200, x+240, y-70);
 quad(x+370, y+270, x+600, y+270, x+570, y+200, x+440, y+200);
 quad(x+600, y+270, x+850, y+100, x+740, y+100, x+570, y+200);
+
+//the color orange of the rainbow
 fill(245, 108, 29);
 quad(x-65, y-35, x+54, y+65, x+55, y+80, x-65, y-35);
 quad(x+55, y+80, x+233, y-40, x+237, y-55, x+50, y+65);
@@ -81,6 +85,27 @@ quad(x+230, y-45, x+420, y+220, x+430, y+210, x+237, y-55);
 quad(x+420, y+220, x+580, y+220, x+575, y+210, x+430, y+210);
 quad(x+580, y+220, x+850, y+55, x+740, y+110, x+575, y+210);
 
+//the color yellow of the rainbow
+fill(255, 241, 46);
+quad(x-65, y-35, x+57, y+90, x+55, y+75, x-65, y-35);
+quad(x+57, y+90, x+230, y-30, x+233, y-40, x+55, y+75);
+quad(x+230, y-30, x+410, y+230, x+420, y+220, x+233, y-40);
+quad(x+410, y+230, x+585, y+230, x+580, y+220, x+420, y+220);
+quad(x+585, y+230, x+800, y+95, x+770, y+102, x+580, y+220);
+
+//the color green of the rainbow
+fill(70, 166, 55);
+
+//the color blue of the rainbow
+fill(12, 90, 235);
+
+//the color indigo of the rainbow
+fill(67, 29, 181);
+
+//the color violet of the rainbow
+fill(108, 22, 184);
+
+//the ending rainbow
 noFill();
 stroke(255, 0, 0);
 strokeWeight(15);
@@ -96,13 +121,15 @@ arc(x+995, y+100, 380, 380, -180, 0);
 stroke(67, 29, 181);
 arc(x+995, y+100, 350, 350, -180, 0);
 stroke(108, 22, 184);
-arc(x+995, y+100, 320, 320, -180, 0);
-}
+arc(x+995, y+100, 320, 320, -180, 0);}
 
-translate(0, 0);
+//scaling the rainbow
+translate(0, 60);
 scale(1);
 prismaRainbow(x, y);
 pop();
+
+//scaling the star
 push();
 translate (100, 50);
 scale(0.5);
