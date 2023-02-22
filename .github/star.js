@@ -141,7 +141,19 @@ arc(x+995, y+100, 380, 380, -180, 0);
 stroke(67, 29, 181);
 arc(x+995, y+100, 350, 350, -180, 0);
 stroke(108, 22, 184);
-arc(x+995, y+100, 320, 320, -180, 0);}
+arc(x+995, y+100, 320, 320, -180, 0);
+  
+//the clouds on the rainbow
+fill(255, 255, 255);
+noStroke();
+ellipse(x+750, y+90, 60, 40);
+ellipse(x+830, y+90, 60, 40);
+ellipse(x+790, y+90, 60, 40);
+ellipse(x+790, y+70, 60, 40);
+ellipse(x+1160, y+90, 60, 40);
+ellipse(x+1240, y+90, 60, 40);
+ellipse(x+1200, y+90, 60, 40);
+ellipse(x+1200, y+70, 60, 40);}  
 
 //scaling the rainbow
 translate(0, 60);
