@@ -1,7 +1,15 @@
 let x=200;
 let y=100;
+let starY = 550;
+let velocity = 0.6;
+let acceleration = 0.1;
+let gameWorking = true;
+function mousePressed() {
+velocity = velocity - 2.5;} 
+
 angleMode(DEGREES);
 // background
+function scenery(){
 push();
 background(77, 178, 250);
 fill(19, 105, 19);
@@ -10,6 +18,7 @@ rect(x-200, y+365, 700, 150);
 function grassRound(x, y){
 fill(40, 133, 40);
 stroke(11, 69, 11);
+strokeWeight(1);
 arc(x-100, y+370, 30, 60, -80, 0);
 arc(x-105, y+370, 20, 40, -80, 0);
 arc(x-87, y+370, 15, 50, -85, 0);}
@@ -35,14 +44,14 @@ grassLine(x+10, y+20);
 grassLine(x+170, y-50);
 grassLine(x+270, y+10);
 grassLine(x+440, y-40);
-pop();
+pop();}
 
 
 // star- your character 
 function star(x, y) {
 push();
 stroke(240, 202, 14);
-strokeWeight(3);
+strokeWeight(1);
 triangle(x-10, y, x, y-30, x+10, y);
 triangle(x-40, y+5, x-10, y, x-15, y+20);
 triangle(x+40, y+5, x+10, y, x+15, y+20);
@@ -53,6 +62,7 @@ ellipse(x, y+13.5, 33);
 pop();
 fill(240, 202, 14);
 stroke(240, 202, 14);
+strokeWeight(1);
 triangle(x-5, y+15, x, y-30, x+5, y+15);
 triangle(x-40, y+5, x, y+8, x, y+18);
 triangle(x+40, y+5, x, y+8, x, y+18);
@@ -142,7 +152,7 @@ stroke(67, 29, 181);
 arc(x+995, y+100, 350, 350, -180, 0);
 stroke(108, 22, 184);
 arc(x+995, y+100, 320, 320, -180, 0);
-  
+
 //the clouds on the rainbow
 fill(255, 255, 255);
 noStroke();
@@ -153,17 +163,45 @@ ellipse(x+790, y+70, 60, 40);
 ellipse(x+1160, y+90, 60, 40);
 ellipse(x+1240, y+90, 60, 40);
 ellipse(x+1200, y+90, 60, 40);
-ellipse(x+1200, y+70, 60, 40);}  
+ellipse(x+1200, y+70, 60, 40);}
 
 //scaling the rainbow
-translate(0, 60);
-scale(1);
-prismaRainbow(x, y);
-pop();
+// translate(50, 90);
+// scale(1);
+// prismaRainbow(x, y);
+// pop();
 
 //scaling the star
-push();
-translate (100, 50);
-scale(0.5);
-star(x-200, y);
-pop();
+// push();
+// translate (260, 190);
+// scale(0.35);
+// star(x-200, y);
+// pop();
+
+//making the rainbow move
+let prismaRainbowX = 200;
+function draw(){
+scenery();
+prismaRainbow(prismaRainbowX, 165);
+scale(0.4);
+star(600, starY);
+prismaRainbowX = prismaRainbowX - 1;
+starY = starY + velocity;
+velocity = velocity + acceleration;
+
+if (prismaRainbowX < -550) {
+prismaRainbowX = width + 100;}
+
+if (gameWorking) {
+prismaRainbowX = prismaRainbowX - 1;
+starY = starY + velocity;
+velocity = velocity + acceleration;
+  
+if (prismaRainbowX < -100) {
+prismaRainbowX = width + 100;}
+
+if (mouseIsPressed) {
+velocity = velocity - 0.2;}
+  
+if (starY > 200) {
+gameWorking = false;}}}
