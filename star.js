@@ -6,15 +6,16 @@ let velocity = 0.6;
 let acceleration = 0.1;
 let starMoving = true;
 let gameWorking = false;
+let prismaRainbowX = 150;
+let prismaRainbowY = 85;
 let currentScreen = "start";
 
 function setup(){
-  createCanvas(600, 600);}
+createCanvas(600, 600);
+angleMode(DEGREES);  }
 
 function keyPressed() {
   velocity = velocity - 2.5;}
-
-angleMode(DEGREES);
 
 // background
 function scenery() {
@@ -147,18 +148,15 @@ function prismaRainbow(x, y) {
   ellipse(x + 420, y + 380, 60, 40);
   ellipse(x + 390, y + 360, 60, 40);}
 
-//making the rainbow move
-let prismaRainbowX = 150;
-let prismaRainbowY = 85;
-
 function draw() {  
   if (currentScreen === "start"){
     startScreen(x, y);
 if (mouseIsPressed === true){
   currentScreen = "play";}}
 
-else if(currentScreen === "play"){
-entireGame();}
+if(currentScreen === "play"){
+entireGame(x, y);
+}
 
 else if(currentScreen === "lose"){
   if (mouseIsPressed === true){
@@ -183,7 +181,7 @@ particles.push(particle);}}
 if (starMoving) {
 if(gameWorking){
 clear();
-entireGame();}
+entireGame(x, y);}
 
 else{
   scenery();
@@ -321,7 +319,7 @@ gameWorking = true;
 starY = starY + velocity;
 velocity = velocity + acceleration;}
 
-function entireGame(){
+function entireGame(x, y){
   scenery();
   prismaRainbow(prismaRainbowX, prismaRainbowY);
   scale(0.4);
