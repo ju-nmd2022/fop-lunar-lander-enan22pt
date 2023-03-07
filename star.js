@@ -8,6 +8,7 @@ let starMoving = true;
 let gameWorking = false;
 let prismaRainbowX = 150;
 let prismaRainbowY = 85;
+let particles = [];
 let currentScreen = "start";
 
 function setup(){
@@ -81,7 +82,7 @@ function star(x, y) {
   triangle(x + 25, y + 50, x + 2, y + 10, x - 10, y + 10);}
 
 //prisma-rainbow
-push();
+
 function prismaRainbow(x, y) {
   noStroke();
   fill(24, 69, 79);
@@ -208,7 +209,7 @@ scenery();
 winScreen(x, y);}}}
 
 //particles behind the star
-let particles = [];
+
 function createParticle(x, y) {
 const v = 0.2 + Math.random();
 const a = Math.PI + Math.random() * Math.PI;
